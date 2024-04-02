@@ -1,9 +1,10 @@
 import { useSelector } from "react-redux";
 import Contact from "../Contact/Contact";
 import { selectNameFilter } from "../../redux/filtersSlice";
+import { selectContacts } from "../../redux/contactsSlice";
 
 const ContactList = ({  onDelete }) => {
-  const contactsData = useSelector((state) => state.contacts);
+  const contactsData = useSelector(selectContacts);
   const search = useSelector(selectNameFilter);
   
    const filterContacts = contactsData.filter((contact) =>
