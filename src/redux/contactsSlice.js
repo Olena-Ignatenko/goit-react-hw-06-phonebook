@@ -18,7 +18,9 @@ const contactsSlice = createSlice({
   reducers: {
     addContact: {
       reducer(state, action) {
-        state.items.push(action.payload); // Доступ до масиву контактів через state.items
+        if (state.items) {
+          state.items.push(action.payload); // Доступ до масиву контактів через state.items
+        }
       },
       prepare(contact) {
         return {
