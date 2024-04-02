@@ -3,7 +3,7 @@ import Contact from "../Contact/Contact";
 import { selectNameFilter } from "../../redux/filtersSlice";
 import { selectContacts } from "../../redux/contactsSlice";
 
-const ContactList = ({  onDelete }) => {
+const ContactList = () => {
   const contactsData = useSelector(selectContacts);
   const search = useSelector(selectNameFilter);
   
@@ -13,7 +13,7 @@ const ContactList = ({  onDelete }) => {
   return (
     <ul>
       {filterContacts.map((contact) => (
-        <Contact key={contact.id} contact={contact} onDelete={onDelete} />
+        <Contact key={contact.id} contact={contact}  />
       ))}
     </ul>
   );
